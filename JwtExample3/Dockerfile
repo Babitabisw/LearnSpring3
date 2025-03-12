@@ -1,7 +1,5 @@
-FROM openjdk:21
+FROM openjdk:21-slim
 
-COPY target/JwtExample3-0.0.1-SNAPSHOT.jar /usr/app/
+COPY target/*.jar app.jar
 
-WORKDIR /usr/app
-
-ENTRYPOINT ["java","-jar","JwtExample3-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/app.jar"]
